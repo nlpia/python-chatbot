@@ -4,6 +4,7 @@ import random
 from chatbot.chat import ChatResponse
 from chatbot.contrib.base import Feature
 
+
 class DiceFeature(Feature):
     """
     Rolls dice and responds with the results.
@@ -50,6 +51,7 @@ class DiceFeature(Feature):
             response_content = "%s rolled %sd%s for a total of %d" % (query.nickname, dice_count, dice_sides, results_sum)
         
         return ChatResponse(response_content)
+
 
 class ChoiceFeature(Feature):
     addressing_required = True
