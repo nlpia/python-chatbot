@@ -1,5 +1,5 @@
 import re
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 from chatbot.chat import ChatResponse
 from chatbot.contrib.base import Feature
 
@@ -31,7 +31,7 @@ class BaseURLFeature(Feature):
 			raise NotImplementedError('Attribute `url_format` or method `get_url` must be defined on %s.' % self.__class__.__name__)
 		url = self.url_format % keyword
 		try:
-			page = urllib2.urlopen(url)
+			page = urllib.request.urlopen(url)
 			return url
 		except:
 			return False

@@ -58,4 +58,4 @@ class IRCBotFactory(protocol.ClientFactory):
 		return bot
 		
 	def clientConnectionFailed(self, connector, reason):
-		print "connection failed: ", reason
+		print("connection failed: ", reason)

@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 import re
 import random
 from chatbot.chat import ChatResponse

@@ -1,5 +1,5 @@
 import re
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import json
 from chatbot.chat import ChatResponse
 from chatbot.contrib.base import Feature
@@ -19,8 +19,8 @@ class TweetReader(Feature):
 			user_name = result[0]
 			tweet_id = result[1]
 			try:
-				page = urllib2.urlopen(self.api_url_pattern % tweet_id)
-			except urllib2.URLError:
+				page = urllib.request.urlopen(self.api_url_pattern % tweet_id)
+			except urllib.error.URLError:
 				response_content = response_content + "Error accessing tweet from %s." % user_name + "\n"
 				continue
 			data = json.load(page)
