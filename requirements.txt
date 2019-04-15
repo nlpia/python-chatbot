@@ -33,3 +33,4 @@
 # scipy==1.0
 
 service-identity>=18.1.0
+twisted
