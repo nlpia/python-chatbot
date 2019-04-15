@@ -22,19 +22,19 @@ from chatbot.bots import Bot
 from chatbot.contrib import *
 
 bot = Bot(
-	nickname = 'bestbot',
-	hostname = 'chat.freenode.net',
-	port = 6665,
-	server_password = 'my_bots_password',
-	channels = ('#freenode', '#python'),
-	features = (
-		PyPIFeature(),
-		WikipediaFeature(),
-		DictionaryFeature(),
-		DiceFeature(),
-		ChoiceFeature(),
-		SlapbackFeature(),
-	)
+    nickname = 'bestbot',
+    hostname = 'chat.freenode.net',
+    port = 6665,
+    server_password = 'my_bots_password',
+    channels = ('#freenode', '#python'),
+    features = (
+        PyPIFeature(),
+        WikipediaFeature(),
+        DictionaryFeature(),
+        DiceFeature(),
+        ChoiceFeature(),
+        SlapbackFeature(),
+    )
 )
 
 bot.run()
@@ -59,22 +59,22 @@ from chatbot.contrib.simple import Match
 from chatbot.chat import ChatResponse
 
 SLAP_OPTIONS = (
-	ChatResponse('slaps \g<target> around a bit with a baseball bat', action=True),
-	ChatResponse('slaps \g<target> around a bit with a large trout', action=True),
-	ChatResponse('slaps \g<target> around a bit with a piano', action=True),
-	ChatResponse('slaps \g<target> around a bit with a french fry', action=True),
+    ChatResponse('slaps \g<target> around a bit with a baseball bat', action=True),
+    ChatResponse('slaps \g<target> around a bit with a large trout', action=True),
+    ChatResponse('slaps \g<target> around a bit with a piano', action=True),
+    ChatResponse('slaps \g<target> around a bit with a french fry', action=True),
 )
 
 bot = Bot(
-	nickname = 'bestbot',
-	hostname = 'chat.freenode.net',
-	port = 6665,
-	server_password = 'my_bots_password',
-	channels = ('#freenode', '#python'),
-	features = (
-		Match(r'slap (?P<target>[^\s]+) (?P<object>.+)', ChatResponse('slaps \g<target> around a bit \g<object>', action=True), addressing_required=True, allow_continuation=False),
-		Match(r'slap (?P<target>.+)', SLAP_OPTIONS, addressing_required=True, allow_continuation=False),
-	)
+    nickname = 'bestbot',
+    hostname = 'chat.freenode.net',
+    port = 6665,
+    server_password = 'my_bots_password',
+    channels = ('#freenode', '#python'),
+    features = (
+        Match(r'slap (?P<target>[^\s]+) (?P<object>.+)', ChatResponse('slaps \g<target> around a bit \g<object>', action=True), addressing_required=True, allow_continuation=False),
+        Match(r'slap (?P<target>.+)', SLAP_OPTIONS, addressing_required=True, allow_continuation=False),
+    )
 )
 
 bot.run()
