@@ -6,7 +6,7 @@ console script. To run this script uncomment the following lines in the
 [options.entry_points] section in setup.cfg:
 
     console_scripts =
-         fibonacci = python_chatbot.skeleton:run
+         fibonacci = chatbot.skeleton:run
 
 Then run `python setup.py install` which will install the command `fibonacci`
 inside your current environment.
@@ -20,7 +20,7 @@ import argparse
 import sys
 import logging
 
-from python_chatbot import __version__
+from chatbot import __version__
 
 __author__ = "hobs"
 __copyright__ = "hobs"

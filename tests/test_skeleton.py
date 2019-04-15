@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from python_chatbot.skeleton import fib
+from chatbot.skeleton import fib
 
 __author__ = "hobs"
 __copyright__ = "hobs"
