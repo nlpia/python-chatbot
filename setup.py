@@ -1,19 +1,24 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+    Setup file for python_chatbot.
+    Use setup.cfg to configure your project.
 
-import os
-from setuptools import setup, find_packages
+    This file was generated with PyScaffold 3.1.
+    PyScaffold helps you to put up the scaffold of your new Python project.
+    Learn more under: https://pyscaffold.org/
+"""
+import sys
 
-version = __import__('chatbot').VERSION
+from pkg_resources import require, VersionConflict
+from setuptools import setup
 
-setup(
-		name='chatbot',
-		version='.'.join([str(v) for v in version]),
-		description='Extensible IRC chatbot written in python.',
-		license='BSD',
-		packages=find_packages(),
-		include_package_data=True,
-		zip_safe=False,
-		install_requires=[
-			'twisted',
-		],
-	)
+try:
+    require('setuptools>=38.3')
+except VersionConflict:
+    print("Error: version of setuptools is too old (<38.3)!")
+    sys.exit(1)
+
+
+if __name__ == "__main__":
+    setup(use_pyscaffold=True)
